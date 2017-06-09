@@ -34,4 +34,6 @@ services:
             - /srv/Owncloud:/var/www/html
         links:
             - owncloud
+        ports:
+            "80:80"
         container_name: nginx
