@@ -27,7 +27,6 @@ services:
         links:
             - mysql
             - redis
-            - nginx
         container_name: owncloud
     nginx:
         image: nginx
