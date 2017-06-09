@@ -17,3 +17,18 @@ services:
         expose:
             - "6379"
         container_name: redis
+    owncloud:
+        image: owncloud
+        expose:
+            - "80"
+        volumes:
+            - ./owncloud/config:/var/www/html/config
+            - ./owncloud/data:/var/www/html/data
+        container_name: owncloud
+    nginx:
+        image: nginx
+        volumes:
+            - /srv/Owncloud:/var/www/html
+        links:
+            - owncloud
+        container_name: nginx
