@@ -24,6 +24,9 @@ services:
         volumes:
             - ./owncloud/config:/var/www/html/config
             - ./owncloud/data:/var/www/html/data
+        links:
+            - mysql
+            - redis
         container_name: owncloud
     nginx:
         image: nginx
