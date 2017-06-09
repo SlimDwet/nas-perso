@@ -37,5 +37,5 @@ services:
         links:
             - owncloud
         ports:
-            "80:80"
+            - "80:80"
         container_name: nginx
